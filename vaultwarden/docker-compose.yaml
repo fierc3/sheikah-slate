@@ -1,0 +1,14 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: always
+    environment:
+      - SIGNUPS_ALLOWED=true
+      # We use localhost for now. HTTPS is not strictly required for localhost access.
+      - DOMAIN=http://localhost:8080
+    volumes:
+      # This is the "Bind Mount". It saves all data to a folder named 'vw-data' right here.
+      - ./data:/data
+    ports:
+      - 8080:80
