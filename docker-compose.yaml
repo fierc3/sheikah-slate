@@ -1,0 +1,9 @@
+services:
+  portainer:
+    extends:
+      file: portainer/docker-compose.yaml
+      service: portainer
+  vaultwarden:
+    extends:
+      file: vaultwarden/docker-compose.yaml
+      service: vaultwarden
